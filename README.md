@@ -13,7 +13,7 @@ Only the #1 of the following process would be automated, LOL
 
 ## How to Use this docker
 1. Download and unzip the source of this repository, then rename the root directory's name to your favorite one
-2. If the project requires an additional file(s), such as `.env` file, in order to work correctly, please locate the additional file(s) into `./gatsby-dev/.LocalDevFiles` folder
+2. If the project requires an additional file(s) such as `.env` file in order to be worked correctly, please locate the additional file(s) into `./gatsby-dev/.LocalDevFiles` folder
 3. Modify the file `./gatsby-dev/variables.txt`
 4. Go to the directory where the docker-compose.yml exists
 5. `docker compose up -d`
@@ -22,9 +22,9 @@ Only the #1 of the following process would be automated, LOL
 8. Go into the created repository
 9. Develop and git push manually
 10. When you finish your today's development, type `exit` to go back to your host machine, then you can do either `docker compose stop` or `docker compose down`. 
-    * The former case, you can resume your yesterday's work immediately by `docker compose up -d` then `docker exec -it <your container name> bash`
-    * The latter case, upon attaching to the docker container, re-execute `dev-init.sh` in order to re-setup the environment. Unfortunately git credentials have to be set again - you will be prompted when you do git push again
-    * In either case, your repository itself is kept safe storing at your host machine (bind mounted)
+    * In the former case, you can resume your yesterday's work immediately by `docker compose up -d` then `docker exec -it <your container name> bash`
+    * In the latter case, upon attaching to the docker container, please re-execute `dev-init.sh` in order to re-setup the environment. Unfortunately git credentials have to be set again - you will be prompted when you do git push again
+    * In either case, your repository itself is kept safe storing at your host machine (Bind-Mounting)
 
 ## How to modify variables.txt
 * REPODIR : set this to the same name as the repository name of RMT_REPO_ADDR (if they don't match, script command is not forwarded inside the repository automatically...)
@@ -48,7 +48,7 @@ Only the #1 of the following process would be automated, LOL
 * Git credential information will be stored into the default `~/.git-credentials` file which is located at container's home directory.
 
 1. Open root folder of this docker project via VSCode
-2. If the project requires an additional file(s), such as `.env` file, in order to work correctly, please locate the additional file(s) into `./gatsby-dev/.LocalDevFiles` folder
+2. If the project requires an additional file(s) such as `.env` file in order to be worked correctly, please locate the additional file(s) into `./gatsby-dev/.LocalDevFiles` folder
 3. Modify the file `./gatsby-dev/variables.txt`
 4. From VSCode's terminal, `docker compose up -d`
 5. Attach to the container via Remote Containers plugin
